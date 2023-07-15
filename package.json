@@ -2,21 +2,33 @@
   "name": "pin-bot",
   "version": "1.0.0",
   "description": "This bot simply pins messages on discord channels.",
+  "repository": "github:Magi3r/pin-bot",
   "main": "bot.ts",
+  "bin": "bot.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run-dev": "pnpm ts-node .",
-    "run-dist": "cd ./dist && node bot.js",
-    "build": "pnpm tsc",
-    "copy-files": "cp .env ./dist && cat package.json | sed s/bot.ts/bot.js/ > ./dist/package.json",
-    "clean": "rm -rf ./dist"
+    "run-dev": "npx ts-node .",
+    "run-dist": "cd ./dist/src && node bot.js",
+    "compile": "npx tsc",
+    "copy-files": "npm run copy-package-json && npm run copy-env",
+    "copy-env": "cp .env ./dist/src",
+    "copy-package-json": "cat package.json | sed s/bot.ts/bot.js/ > ./dist/src/package.json",
+    "clean": "rm -rf ./dist/",
+    "zip-dist": "cd ./dist && zip -r ./js-src.zip ./src",
+    "build": "cd ./dist/src && npx pkg -C --out-path '../bin' . ",
+    "pipeline": "npm run clean && npm run compile && npm run copy-package-json && npm run zip-dist && npm run build"
   },
-  "keywords": ["discord.js", "discord", "bot"],
+  "keywords": [
+    "discord.js",
+    "discord",
+    "bot"
+  ],
   "author": "Magi3r",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.11.0",
     "dotenv": "^16.3.1",
+    "pkg": "^5.8.1",
     "ts-command-line-args": "^2.5.1",
     "validator": "^13.9.0"
   },
