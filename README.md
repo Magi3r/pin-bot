@@ -1,6 +1,7 @@
 
 # Pin-Bot
-![GitHub](https://img.shields.io/github/license/Magi3r/pin-bot)
+[![GitHub](https://img.shields.io/github/license/Magi3r/pin-bot)](LICENSE.md)
+
 A simple discord bot for allowing anyone to pin and unpin messages.
 
 Discord only allows pinning and unpinning messages for roles having the `Manage Messages` permission, which also allows deleting any message.
