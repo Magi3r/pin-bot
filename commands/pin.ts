@@ -1,32 +1,47 @@
-import { CommandInteraction, Message, SlashCommandBuilder } from "discord.js";
-import { Command } from "../types/Command"
+import { ApplicationCommandOptionType, CommandInteraction, Message } from "discord.js";
+import { Command } from "../types/Command";
 
 const command: Command = {
-    data: new SlashCommandBuilder()
-        .setName('pin')
-        .setDescription('Pins a message!')
-        .addStringOption(
-            option =>
-                option
-                    .setName('message_id')
-                    .setDescription('Message ID')
-                    .setRequired(true)
+    data: {
+        name: "pin",
+        description: 'Pins a message!',
+        options: [
+            {
+                name: 'message_id',
+                description: 'Message ID',
+                required: true,
+                type: ApplicationCommandOptionType.String
+            }
+        ]
+    },
+    // new SlashCommandBuilder()
+    //     .setName('pin')
+    //     .setDescription('Pins a message!')
+    //     .addStringOption(
+    //         option =>
+    //             option
+    //                 .setName('message_id')
+    //                 .setDescription('Message ID')
+    //                 .setRequired(true)
 
-        ),
+        // ),
     async execute(interaction: CommandInteraction) {
-        let answer = "";
+        let answer = "Placeholder text (this is not intended)";
         console.log("pin");
         const message_id: string = await interaction.options.get('message_id')?.value as string;
-        interaction.channel?.messages.fetch(message_id).then((message: Message) => {
+        console.log(message_id);
+        interaction.channel?.messages.fetch(message_id).then(async (message: Message) => {
             if (!message.pinnable) {
                 answer = "Message is not pinnable";
             }
             else {
-                message.pin(interaction.user.username);
+                await message.pin(interaction.user.username);
                 answer = "Message pinned!";
             }
         }
-        ).catch(() => {
+        ).catch((message: Message) => {
+            console.log(message);
+            
             answer = "Message not found"
         });
 
