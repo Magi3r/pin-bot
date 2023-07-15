@@ -1,4 +1,4 @@
-FROM node:18 as build
+FROM node:18-slim as build
 WORKDIR /app
 COPY /dist/src .
 RUN npm i --omit="dev"
