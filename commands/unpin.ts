@@ -8,7 +8,7 @@ const command: Command = {
         options: [
             {
                 name: 'message_id',
-                description: 'Message ID',
+                description: 'Message ID or Message Link',
                 required: true,
                 type: ApplicationCommandOptionType.String
             }
