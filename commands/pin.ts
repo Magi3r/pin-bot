@@ -14,38 +14,31 @@ const command: Command = {
             }
         ]
     },
-    // new SlashCommandBuilder()
-    //     .setName('pin')
-    //     .setDescription('Pins a message!')
-    //     .addStringOption(
-    //         option =>
-    //             option
-    //                 .setName('message_id')
-    //                 .setDescription('Message ID')
-    //                 .setRequired(true)
-
-        // ),
     async execute(interaction: CommandInteraction) {
-        let answer = "Placeholder text (this is not intended)";
-        console.log("pin");
         const message_id: string = await interaction.options.get('message_id')?.value as string;
-        console.log(message_id);
+        console.log(`/pin invoced by '${interaction.user}' for message '${message_id}'`);
         interaction.channel?.messages.fetch(message_id).then(async (message: Message) => {
             if (!message.pinnable) {
-                answer = "Message is not pinnable";
+                const answer = "Message is not pinnable.";
+                console.log(answer);
+                await interaction.followUp({ content: answer, ephemeral: true });
             }
             else {
                 await message.pin(interaction.user.username);
-                answer = "Message pinned!";
+                const answer = "Message pinned!";
+                console.log(answer);
+                await interaction.followUp({ content: answer, ephemeral: true });
+
             }
         }
-        ).catch((message: Message) => {
-            console.log(message);
+        ).catch(async () => {
             
-            answer = "Message not found"
+            const answer = 'Message not found.';
+            console.log(answer);
+            await interaction.followUp({ content: answer, ephemeral: true });
+
         });
 
-        await interaction.followUp({ content: answer, ephemeral: true });
     },
 };
 export default command;

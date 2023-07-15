@@ -2,9 +2,10 @@
   "name": "pin-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "bot.js",
+  "main": "bot.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run-dev": "pnpm ts-node ."
   },
   "keywords": [],
   "author": "",
