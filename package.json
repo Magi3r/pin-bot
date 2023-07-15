@@ -18,8 +18,8 @@
     "build": "cd ./dist/src && npx pkg -C GZip -t alpine,windows,linux,macos --out-path '../bin' .",
     "pipeline": "npm run clean && npm run compile && npm run copy-package-json && npm run zip-dist && npm run build",
     "docker-build-all": "npm run docker-build-latest && npm run docker-build-alpine",
-    "docker-build-latest":"docker build -t magi3r/pin-bot:latest ./docker/",
-    "docker-build-alpine": "docker build -t magi3r/pin-bot:alpine ./docker/alpine/",
+    "docker-build-latest":"docker build -t magi3r/pin-bot:latest - <./docker/Dockerfile",
+    "docker-build-alpine": "docker build -t magi3r/pin-bot:alpine - <./docker/alpine/Dockerfile",
     "docker-push-all": "npm run docker-push-latest",
     "docker-push-latest": "docker push magi3r/pin-bot:latest",
     "docker-push-alpine": "docker push magi3r/pin-bot:alpine"
