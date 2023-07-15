@@ -1,5 +1,6 @@
 import { ApplicationCommandOptionType, CommandInteraction, Message } from "discord.js";
 import { Command } from "../types/Command";
+import { parseMessageID } from "../utils";
 
 const command: Command = {
     data: {
@@ -15,8 +16,17 @@ const command: Command = {
         ]
     },
     async execute(interaction: CommandInteraction) {
-        const message_id: string = await interaction.options.get('message_id')?.value as string;
+        const input = await interaction.options.get('message_id')?.value as string;
+        const message_id = parseMessageID(input);
+        console.log(message_id);
+        
         console.log(`/pin invoced by '${interaction.user}' for message '${message_id}'`);
+        if (!message_id) {
+            console.log("Invalid Message");
+            await interaction.followUp({ content: "Can't parse messageID from input", ephemeral: true });
+            return;
+        }
+
         interaction.channel?.messages.fetch(message_id).then(async (message: Message) => {
             if (!message.pinnable) {
                 const answer = "Message is not pinnable.";
