@@ -44,9 +44,13 @@ There are a couple of ways on how to run `pin-bot`:
     npx ts-node
 ```
 
-There is also an [docker image](https://hub.docker.com/r/magi3r/pin-bot/tags). You can download it by running:
+If you want to use the docker image, simply run:
 ```bash
-docker pull magi3r/pin-bot
+docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:latest
+```
+If you prefer alpine because of the slightly smaller image size, run:
+```bash
+docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:alpine
 ```
 
 ## Usage
@@ -69,12 +73,3 @@ You also need to deploy the commands (although only once). This is done by runni
 node bot.js -u
 ```
 You still need to provide a token for this and the bot will start automatically after this.
-
-If you want to use one of the docker images, simply run:
-```bash
-docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:latest
-```
-If you prefer alpine, because of the slightly smaller image size, run:
-```bash
-docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:alpine
-```
