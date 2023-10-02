@@ -44,7 +44,15 @@ There are a couple of ways on how to run `pin-bot`:
     npx ts-node
 ```
 
-A docker image is also planned.
+If you want to use the docker image, simply run:
+```bash
+docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:latest
+```
+If you prefer alpine because of the slightly smaller image size, run:
+```bash
+docker run -d --name pin-bot --restart unless-stopped -e TOKEN=<your-token> magi3r/pin-bot:alpine
+```
+
 ## Usage
 You need to provide a discord bot token. You can get one from the [developer portal](https://discord.com/developers/applications) by creating a new application. You can either provide it as:
 - an environmental variable
