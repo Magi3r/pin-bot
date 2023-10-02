@@ -11,7 +11,7 @@ const cliArgs = parse<CommandLineArgs>({
 
 // Load .env and parse bot-token
 config();
-const TOKEN: string = cliArgs.token || process.env.token || "";
+const TOKEN: string = cliArgs.token || process.env.TOKEN || "";
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds,GatewayIntentBits.GuildMessages] });

@@ -1,6 +1,6 @@
 {
   "name": "pin-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This bot simply pins messages on discord channels.",
   "repository": "github:Magi3r/pin-bot",
   "main": "bot.ts",
