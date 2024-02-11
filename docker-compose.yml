@@ -1,7 +1,7 @@
 version: "3.8"
-  services:
-    pin-bot:
-      image: docker.io/magi3r/pin-bot:alpine
-      restart: unless-stopped
-      environment:
-          TOKEN: <CHANGEME>
+services:
+  pin-bot:
+    image: docker.io/magi3r/pin-bot:alpine
+    restart: unless-stopped
+    environment:
+        TOKEN: <CHANGEME>
