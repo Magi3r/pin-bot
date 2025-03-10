@@ -19,7 +19,7 @@ dependencies:
     version: 2.5.1
   validator:
     specifier: ^13.9.0
-    version: 13.9.0
+    version: 13.12.0
 
 devDependencies:
   '@types/node':
@@ -27,7 +27,7 @@ devDependencies:
     version: 22.13.10
   '@types/validator':
     specifier: ^13.7.17
-    version: 13.7.17
+    version: 13.12.2
   '@typescript-eslint/eslint-plugin':
     specifier: ^8.0.0
     version: 8.25.0(@typescript-eslint/parser@8.26.0)(eslint@8.45.0)(typescript@5.1.6)
@@ -306,8 +306,8 @@ packages:
     dependencies:
       undici-types: 6.20.0
 
-  /@types/validator@13.7.17:
-    resolution: {integrity: sha512-aqayTNmeWrZcvnG2MG9eGYI6b7S5fl+yKgPs6bAjOTwPS316R5SxBGKvtSExfyoJU7pIeHJfsHI0Ji41RVMkvQ==}
+  /@types/validator@13.12.2:
+    resolution: {integrity: sha512-6SlHBzUW8Jhf3liqrGGXyTJSIFe4nqlJ5A5KaMZ2l/vbM3Wh3KSybots/wfWVzNLK4D1NZluDlSQIbIEPx6oyA==}
     dev: true
 
   /@types/ws@8.5.5:
@@ -1884,8 +1884,8 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: true
 
-  /validator@13.9.0:
-    resolution: {integrity: sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==}
+  /validator@13.12.0:
+    resolution: {integrity: sha512-c1Q0mCiPlgdTVVVIJIrBuxNicYE+t/7oKeI9MWLj3fh/uq2Pxh/3eeWbVZ4OcGW1TUf53At0njHw5SMdA3tmMg==}
     engines: {node: '>= 0.10'}
     dev: false
 
