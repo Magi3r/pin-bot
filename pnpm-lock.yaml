@@ -10,7 +10,7 @@ dependencies:
     version: 14.19.1
   dotenv:
     specifier: ^16.3.1
-    version: 16.5.0
+    version: 16.6.0
   pkg:
     specifier: ^5.8.1
     version: 5.8.1
@@ -829,8 +829,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
+  /dotenv@16.6.0:
+    resolution: {integrity: sha512-Omf1L8paOy2VJhILjyhrhqwLIdstqm1BvcDPKg4NGAlkwEu9ODyrFbvk8UymUOMCT+HXo31jg1lArIrVAAhuGA==}
     engines: {node: '>=12'}
     dev: false
 
