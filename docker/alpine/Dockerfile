@@ -1,9 +1,9 @@
-FROM node:24-alpine as build
+FROM node:25-alpine as build
 WORKDIR /app
 COPY /dist/src .
 RUN npm i --omit="dev"
 
-FROM node:24-alpine
+FROM node:25-alpine
 
 COPY --from=build /app /
 CMD ["node", "bot.js", "-u"]
